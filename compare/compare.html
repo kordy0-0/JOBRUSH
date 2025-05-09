@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Comparison - Job Rush</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../compare/compare.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">Jobrush</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="employers.html">Employers</a></li>
+                <li><a href="#" class="btn">Sign Up</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <section class="job-details-section">
+            <div class="container">
+                <div class="comparison-container">
+                    <div class="comparison-header">
+                        <h1 class="comparison-title">Compare Jobs</h1>
+                        <div class="comparison-actions">
+                            <button class="btn" id="addJobBtn">
+                                <i class="fas fa-plus"></i> Add Job
+                            </button>
+                            <button class="btn" id="toggleFeaturesBtn" style="background: #f0f0f0; color: #333;">
+                                Show All Features
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="comparisonTableContainer">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Features</th>
+                                    <th>
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span>Senior Frontend Developer</span>
+                                            <button class="remove-job-btn" data-id="1">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span>UX/UI Designer</span>
+                                            <button class="remove-job-btn" data-id="2">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span>Data Scientist</span>
+                                            <button class="remove-job-btn" data-id="3">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Company</strong></td>
+                                    <td class="job-title"><a href="job-details.html?id=1">TechSolutions Inc.</a></td>
+                                    <td class="job-title"><a href="job-details.html?id=2">Creative Designs</a></td>
+                                    <td class="job-title"><a href="job-details.html?id=3">DataInsights</a></td>
+                                </tr>
+                                <tr class="feature-highlight">
+                                    <td><strong>Salary</strong></td>
+                                    <td class="salary">$120,000 - $150,000</td>
+                                    <td class="salary">$90,000 - $110,000</td>
+                                    <td class="salary">$130,000 - $160,000</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Location</strong></td>
+                                    <td>San Francisco, CA</td>
+                                    <td>New York, NY</td>
+                                    <td>Austin, TX</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Job Type</strong></td>
+                                    <td>Full-time</td>
+                                    <td>Full-time</td>
+                                    <td>Full-time</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Experience</strong></td>
+                                    <td>5+ years</td>
+                                    <td>3+ years</td>
+                                    <td>4+ years</td>
+                                </tr>
+                                <tr class="hidden-feature">
+                                    <td><strong>Education</strong></td>
+                                    <td>Bachelor's Degree</td>
+                                    <td>Bachelor's Degree</td>
+                                    <td>Master's Degree</td>
+                                </tr>
+                                <tr class="hidden-feature">
+                                    <td><strong>Skills</strong></td>
+                                    <td>React, TypeScript, CSS, JavaScript, Redux</td>
+                                    <td>Figma, Adobe XD, Sketch, User Research</td>
+                                    <td>Python, Machine Learning, SQL, Data Visualization</td>
+                                </tr>
+                                <tr class="hidden-feature">
+                                    <td><strong>Benefits</strong></td>
+                                    <td>Health Insurance, 401(k) Matching, Remote Work</td>
+                                    <td>Health Insurance, Gym Membership, Flexible Hours</td>
+                                    <td>Health Insurance, Stock Options, Remote Work</td>
+                                </tr>
+                                <tr class="hidden-feature">
+                                    <td><strong>Company Rating</strong></td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>(4.7)</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>(4.5)</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>(4.8)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hidden-feature">
+                                    <td><strong>Posted Date</strong></td>
+                                    <td>2 days ago</td>
+                                    <td>1 week ago</td>
+                                    <td>3 days ago</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Actions</strong></td>
+                                    <td>
+                                        <a href="job-details.html?id=1" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View Details</a>
+                                    </td>
+                                    <td>
+                                        <a href="job-details.html?id=2" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View Details</a>
+                                    </td>
+                                    <td>
+                                        <a href="job-details.html?id=3" class="btn" style="padding: 8px 15px; font-size: 0.9rem;">View Details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="emptyComparisonMessage" class="comparison-empty" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No jobs selected for comparison</h3>
+                        <p>Add jobs to compare their features side by side</p>
+                        <button class="btn" id="emptyAddJobBtn" style="margin-top: 20px;">
+                            <i class="fas fa-plus"></i> Add Job
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>Jobrush is a leading job search platform connecting talented individuals with top employers across all industries.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="employers.html">Companies</a></li>
+                        <li><a href="#">Salary Guide</a></li>
+                        <li><a href="#">Career Advice</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Resume Builder</a></li>
+                        <li><a href="#">Career Coaching</a></li>
+                        <li><a href="#">Job Alerts</a></li>
+                        <li><a href="#">Interview Preparation</a></li>
+                        <li><a href="#">Employer Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@jobrush.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Career Street, Job City, JC 12345</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Jobrush. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Selection Modal -->
+    <div id="jobSelectionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Select a Job to Compare</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="job-selection-list">
+                    <div class="job-selection-item" data-id="4">
+                        <div class="job-selection-info">
+                            <h3>Marketing Manager</h3>
+                            <p>GrowthMarketing - Chicago, IL</p>
+                            <p class="job-selection-salary">$85,000 - $105,000</p>
+                        </div>
+                        <button class="btn select-job-btn">Add</button>
+                    </div>
+                    <div class="job-selection-item" data-id="5">
+                        <div class="job-selection-info">
+                            <h3>Backend Developer</h3>
+                            <p>TechSolutions Inc. - San Francisco, CA</p>
+                            <p class="job-selection-salary">$110,000 - $140,000</p>
+                        </div>
+                        <button class="btn select-job-btn">Add</button>
+                    </div>
+                    <div class="job-selection-item" data-id="6">
+                        <div class="job-selection-info">
+                            <h3>Product Manager</h3>
+                            <p>InnovateTech - Seattle, WA</p>
+                            <p class="job-selection-salary">$120,000 - $150,000</p>
+                        </div>
+                        <button class="btn select-job-btn">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../compare/compare.js"></script>
+</body>
+</html>
