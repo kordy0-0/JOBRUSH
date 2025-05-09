@@ -6,578 +6,756 @@
     <title>Business Owner Directory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../employers/employers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Business Owner Directory</h1>
-                <p>Connect with local entrepreneurs and explore business opportunities</p>
-            </div>
-        </div>
-    </header>
-    
-    <main class="container main-content">
-        <div class="tools-container">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Search by name, location, or business type...">
-                <i class="fas fa-search"></i>
-            </div>
-            
-            <div class="sort-container">
-                <span class="sort-label">Sort by:</span>
-                <select id="sortSelect" class="sort-select">
-                    <option value="nameAsc">Name (A-Z)</option>
-                    <option value="nameDesc">Name (Z-A)</option>
-                    <option value="locationAsc">Location (A-Z)</option>
-                    <option value="wageDesc">Wage (High to Low)</option>
-                    <option value="wageAsc">Wage (Low to High)</option>
-                    <option value="ratingDesc">Rating (High to Low)</option>
-                </select>
-            </div>
-            
-            <button class="filter-button">
-                <i class="fas fa-filter"></i> Filters
-            </button>
-        </div>
-        
-        <div class="cards-container" id="businessCards">
-            <!-- Card 1 -->
-            <div class="card" data-name="Sarah Johnson" data-location="Portland" data-wage="18" data-rating="4.7">
-                <div class="card-badge badge-hiring">Hiring</div>
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1556742526-795a8eac090e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFrZXJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sarah's Bakery">
-                </div>
-                <div class="card-content">
-                    <h2 class="business-name">Sarah Johnson</h2>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>(4.7)</span>
+    <div class="page-wrapper">
+        <header class="hero">
+            <div class="container">
+                <nav class="navbar">
+                    <div class="logo">
+                        <i class="fas fa-building"></i>
+                        <span>BizConnect</span>
                     </div>
-                    <div class="business-info">
-                        <div class="info-item">
-                            <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                            <div class="info-value">Sarah's Bakery</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                            <div class="info-value">$18/hour + benefits</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                            <div class="info-value">123 Main Street, Portland, OR</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                            <div class="info-value">(503) 555-1234</div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                            <div class="info-value"><a href="mailto:sarah@sarahsbakery.com">sarah@sarahsbakery.com</a></div>
-                        </div>
+                    <div class="nav-links">
+                        <a href="#" class="active">Directory</a>
+                        <a href="#">Businesses</a>
+                        <a href="#">Jobs</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
                     </div>
-                    
-                    <div class="categories-container">
-                        <span class="category-tag">Bakery</span>
-                        <span class="category-tag">Food Service</span>
-                        <span class="category-tag">Retail</span>
+                    <div class="nav-buttons">
+                        <button class="btn btn-outline">Sign In</button>
+                        <button class="btn btn-primary">Register</button>
                     </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    </div>
-                    
-                    <div class="card-footer">
-                        <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Portland</span>
-                        <a href="https://www.sarahsbakery.com/contact" class="contact-button" target="_blank">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+                
+                <div class="hero-content">
+                    <h1>Business Owner Directory</h1>
+                    <p>Connect with local entrepreneurs and explore business opportunities in your area</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">2,500+</span>
+                            <span class="stat-label">Business Owners</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Cities</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Job Openings</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="hero-shape"></div>
+        </header>
+        
+        <main class="main-content">
+            <div class="container">
+                <div class="tools-container">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search by name, location, or business type...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="sort-container">
+                        <span class="sort-label">Sort by:</span>
+                        <select id="sortSelect" class="sort-select">
+                            <option value="nameAsc">Name (A-Z)</option>
+                            <option value="nameDesc">Name (Z-A)</option>
+                            <option value="locationAsc">Location (A-Z)</option>
+                            <option value="wageDesc">Wage (High to Low)</option>
+                            <option value="wageAsc">Wage (Low to High)</option>
+                            <option value="ratingDesc">Rating (High to Low)</option>
+                        </select>
+                    </div>
+                    
+                    <button class="filter-button">
+                        <i class="fas fa-filter"></i> Filters
+                    </button>
+                </div>
+                
+                <div class="directory-stats">
+                    <div class="stat-pill">
+                        <i class="fas fa-user-tie"></i>
+                        <span>8 Business Owners</span>
+                    </div>
+                    <div class="stat-pill">
+                        <i class="fas fa-briefcase"></i>
+                        <span>3 Hiring Now</span>
+                    </div>
+                    <div class="stat-pill">
+                        <i class="fas fa-star"></i>
+                        <span>Avg Rating: 4.7</span>
+                    </div>
+                </div>
+                
+                <div class="cards-container" id="businessCards">
+                    <!-- Card 1 -->
+                    <div class="card" data-name="Sarah Johnson" data-location="Portland" data-wage="18" data-rating="4.7">
+                        <div class="card-badge badge-hiring">Hiring</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1556742526-795a8eac090e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFrZXJ5fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Sarah's Bakery">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">Sarah Johnson</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.7)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Sarah's Bakery</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$18/hour + benefits</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">123 Main Street, Portland, OR</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(503) 555-1234</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:sarah@sarahsbakery.com">sarah@sarahsbakery.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Bakery</span>
+                                <span class="category-tag">Food Service</span>
+                                <span class="category-tag">Retail</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Portland</span>
+                                <a href="https://www.sarahsbakery.com/contact" class="contact-button" target="_blank">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="card" data-name="Michael Chen" data-location="Austin" data-wage="25" data-rating="4.9">
+                        <div class="card-badge badge-premium">Premium</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1581092921461-7111ecb6c8b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2glMjBzaG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Tech Solutions">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">Michael Chen</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(4.9)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Tech Solutions</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$25/hour + commission</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">456 Tech Drive, Austin, TX</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(512) 555-6789</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:michael@techsolutions.com">michael@techsolutions.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">IT Services</span>
+                                <span class="category-tag">Computer Repair</span>
+                                <span class="category-tag">Tech Support</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Austin</span>
+                                <a href="https://www.techsolutions.com/contact" class="contact-button" target="_blank">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card" data-name="Alicia Rodriguez" data-location="Miami" data-wage="22" data-rating="4.5">
+                        <div class="card-badge badge-seasonal">Seasonal</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Zmxvd2VyJTIwc2hvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Floral Designs">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">Alicia Rodriguez</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Alicia's Floral Designs</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$22/hour + tips</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">789 Ocean Blvd, Miami, FL</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(305) 555-9876</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:alicia@floraldesigns.com">alicia@floraldesigns.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Florist</span>
+                                <span class="category-tag">Events</span>
+                                <span class="category-tag">Gifts</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Miami</span>
+                                <a href="https://www.aliciasfloraldesigns.com/contact" class="contact-button" target="_blank">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card" data-name="David Wilson" data-location="Chicago" data-wage="20" data-rating="4.8">
+                        <div class="card-badge badge-hiring">Hiring</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FmZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="City Café">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">David Wilson</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(4.8)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">City Café</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$20/hour + tips</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">321 Windy Road, Chicago, IL</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(312) 555-3210</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:david@citycafe.com">david@citycafe.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Café</span>
+                                <span class="category-tag">Coffee Shop</span>
+                                <span class="category-tag">Bakery</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Chicago</span>
+                                <a href="https://www.citycafe.com/contact" class="contact-button" target="_blank">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card" data-name="Jennifer Lee" data-location="Seattle" data-wage="24" data-rating="4.6">
+                        <div class="card-badge badge-premium">Premium</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhcGhpYyUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Creative Studio">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">Jennifer Lee</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.6)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Lee Creative Studio</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$24/hour + bonuses</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">567 Rainier Ave, Seattle, WA</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(206) 555-8765</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:jennifer@leecreative.com">jennifer@leecreative.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Graphic Design</span>
+                                <span class="category-tag">Web Development</span>
+                                <span class="category-tag">Branding</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Seattle</span>
+                                <a href="https://www.leecreative.com/contact" class="contact-button" target="_blank">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="card" data-name="Marcus Johnson" data-location="Denver" data-wage="21" data-rating="4.4">
+                        <div class="card-badge badge-hiring">Hiring</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Mountain Fitness">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">Marcus Johnson</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.4)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Mountain Fitness</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$21/hour + benefits</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">432 Peak Ave, Denver, CO</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(720) 555-9012</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:marcus@mountainfitness.com">marcus@mountainfitness.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Fitness</span>
+                                <span class="category-tag">Personal Training</span>
+                                <span class="category-tag">Health</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Denver</span>
+                                <a href="#" class="contact-button">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="card" data-name="Sophia Martinez" data-location="San Diego" data-wage="23" data-rating="4.9">
+                        <div class="card-badge badge-premium">Premium</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1464851707681-f9d5fdaccea8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Coastal Events">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">Sophia Martinez</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(4.9)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Coastal Events Planning</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$23/hour + commission</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">789 Beach Drive, San Diego, CA</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(619) 555-3456</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:sophia@coastalevents.com">sophia@coastalevents.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Event Planning</span>
+                                <span class="category-tag">Weddings</span>
+                                <span class="category-tag">Corporate Events</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> San Diego</span>
+                                <a href="#" class="contact-button">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="card" data-name="James Parker" data-location="Nashville" data-wage="19" data-rating="4.5">
+                        <div class="card-badge badge-seasonal">Seasonal</div>
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Music Studio">
+                            <div class="image-overlay">
+                                <div class="quick-actions">
+                                    <button class="action-btn"><i class="fas fa-bookmark"></i></button>
+                                    <button class="action-btn"><i class="fas fa-share-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h2 class="business-name">James Parker</h2>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(4.5)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="business-info">
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-store"></i> Business:</div>
+                                    <div class="info-value">Harmony Music Studio</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
+                                    <div class="info-value">$19/hour + performance fees</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
+                                    <div class="info-value">321 Melody Lane, Nashville, TN</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
+                                    <div class="info-value">(615) 555-7890</div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
+                                    <div class="info-value"><a href="mailto:james@harmonystudio.com">james@harmonystudio.com</a></div>
+                                </div>
+                            </div>
+                            
+                            <div class="categories-container">
+                                <span class="category-tag">Music Production</span>
+                                <span class="category-tag">Lessons</span>
+                                <span class="category-tag">Recording</span>
+                            </div>
+                            
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-spotify"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-soundcloud"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Nashville</span>
+                                <a href="#" class="contact-button">
+                                    <i class="fas fa-envelope"></i> Contact
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination-container">
+                    <div class="results-info">
+                        <span>Showing <strong>1-8</strong> of <strong>24</strong> results</span>
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-left"></i></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#" class="page-nav"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    <div class="per-page">
+                        <label for="perPage">Per page:</label>
+                        <select id="perPage">
+                            <option value="8" selected>8</option>
+                            <option value="16">16</option>
+                            <option value="24">24</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Are you a business owner?</h2>
+                    <p>Join our directory to connect with potential customers and find qualified employees.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary">Register Your Business</a>
+                        <a href="#" class="btn btn-outline-light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <i class="fas fa-building"></i>
+                                <span>BizConnect</span>
+                            </div>
+                            <p>Connecting entrepreneurs with potential customers and job seekers. Our mission is to support local businesses and foster economic growth in communities.</p>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="#"><i class="fas fa-angle-right"></i> Home</a></li>
+                                <li><a href="#"><i class="fas fa-angle-right"></i> Browse Businesses</a></li>
+                                <li><a href="#"><i class="fas fa-angle-right"></i> Register a Business</a></li>
+                                <li><a href="#"><i class="fas fa-angle-right"></i> Jobs</a></li>
+                                <li><a href="#"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h3>Contact Info</h3>
+                            <ul class="contact-info">
+                                <li><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 100, New York, NY 10001</li>
+                                <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                                <li><i class="fas fa-envelope"></i> info@bizconnect.com</li>
+                                <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 5PM</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h3>Newsletter</h3>
+                            <p>Subscribe to our newsletter for the latest business tips and opportunities.</p>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your Email Address">
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Card 2 -->
-<div class="card" data-name="Michael Chen" data-location="Austin" data-wage="25" data-rating="4.9">
-    <div class="card-badge badge-premium">Premium</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1581092921461-7111ecb6c8b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRlY2glMjBzaG9wfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" alt="Tech Solutions">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">Michael Chen</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span>(4.9)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">Tech Solutions</div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 BizConnect Directory. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
             </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$25/hour + commission</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">456 Tech Drive, Austin, TX</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(512) 555-6789</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:michael@techsolutions.com">michael@techsolutions.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">IT Services</span>
-            <span class="category-tag">Computer Repair</span>
-            <span class="category-tag">Tech Support</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Austin</span>
-            <a href="https://www.techsolutions.com/contact" class="contact-button" target="_blank">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-    </div>
-</div>
+        </footer>
 
-<!-- Card 3 -->
-<div class="card" data-name="Alicia Rodriguez" data-location="Miami" data-wage="22" data-rating="4.5">
-    <div class="card-badge badge-seasonal">Seasonal</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Zmxvd2VyJTIwc2hvcHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Floral Designs">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">Alicia Rodriguez</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>(4.5)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">Alicia's Floral Designs</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$22/hour + tips</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">789 Ocean Blvd, Miami, FL</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(305) 555-9876</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:alicia@floraldesigns.com">alicia@floraldesigns.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">Florist</span>
-            <span class="category-tag">Events</span>
-            <span class="category-tag">Gifts</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Miami</span>
-            <a href="https://www.aliciasfloraldesigns.com/contact" class="contact-button" target="_blank">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Card 4 -->
-<div class="card" data-name="David Wilson" data-location="Chicago" data-wage="20" data-rating="4.8">
-    <div class="card-badge badge-hiring">Hiring</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FmZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="City Café">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">David Wilson</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span>(4.8)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">City Café</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$20/hour + tips</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">321 Windy Road, Chicago, IL</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(312) 555-3210</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:david@citycafe.com">david@citycafe.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">Café</span>
-            <span class="category-tag">Coffee Shop</span>
-            <span class="category-tag">Bakery</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-yelp"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Chicago</span>
-            <a href="https://www.citycafe.com/contact" class="contact-button" target="_blank">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Card 5 -->
-<div class="card" data-name="Jennifer Lee" data-location="Seattle" data-wage="24" data-rating="4.6">
-    <div class="card-badge badge-premium">Premium</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhcGhpYyUyMGRlc2lnbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Creative Studio">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">Jennifer Lee</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>(4.6)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">Lee Creative Studio</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$24/hour + bonuses</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">567 Rainier Ave, Seattle, WA</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(206) 555-8765</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:jennifer@leecreative.com">jennifer@leecreative.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">Graphic Design</span>
-            <span class="category-tag">Web Development</span>
-            <span class="category-tag">Branding</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Seattle</span>
-            <a href="https://www.leecreative.com/contact" class="contact-button" target="_blank">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
+        <!-- Back to top button -->
+        <button id="backToTop" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </div>
 
-</div>
-<!-- Card 6 -->
-<div class="card" data-name="Marcus Johnson" data-location="Denver" data-wage="21" data-rating="4.4">
-    <div class="card-badge badge-hiring">Hiring</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Mountain Fitness">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">Marcus Johnson</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>(4.4)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">Mountain Fitness</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$21/hour + benefits</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">432 Peak Ave, Denver, CO</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(720) 555-9012</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:marcus@mountainfitness.com">marcus@mountainfitness.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">Fitness</span>
-            <span class="category-tag">Personal Training</span>
-            <span class="category-tag">Health</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Denver</span>
-            <a href="#" class="contact-button">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Card 7 -->
-<div class="card" data-name="Sophia Martinez" data-location="San Diego" data-wage="23" data-rating="4.9">
-    <div class="card-badge badge-premium">Premium</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1464851707681-f9d5fdaccea8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Coastal Events">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">Sophia Martinez</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <span>(4.9)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">Coastal Events Planning</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$23/hour + commission</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">789 Beach Drive, San Diego, CA</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(619) 555-3456</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:sophia@coastalevents.com">sophia@coastalevents.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">Event Planning</span>
-            <span class="category-tag">Weddings</span>
-            <span class="category-tag">Corporate Events</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> San Diego</span>
-            <a href="#" class="contact-button">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Card 8 -->
-<div class="card" data-name="James Parker" data-location="Nashville" data-wage="19" data-rating="4.5">
-    <div class="card-badge badge-seasonal">Seasonal</div>
-    <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" alt="Music Studio">
-    </div>
-    <div class="card-content">
-        <h2 class="business-name">James Parker</h2>
-        <div class="rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>(4.5)</span>
-        </div>
-        <div class="business-info">
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-store"></i> Business:</div>
-                <div class="info-value">Harmony Music Studio</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-dollar-sign"></i> Wage:</div>
-                <div class="info-value">$19/hour + performance fees</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</div>
-                <div class="info-value">321 Melody Lane, Nashville, TN</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-phone"></i> Phone:</div>
-                <div class="info-value">(615) 555-7890</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label"><i class="fas fa-envelope"></i> Email:</div>
-                <div class="info-value"><a href="mailto:james@harmonystudio.com">james@harmonystudio.com</a></div>
-            </div>
-        </div>
-        
-        <div class="categories-container">
-            <span class="category-tag">Music Production</span>
-            <span class="category-tag">Lessons</span>
-            <span class="category-tag">Recording</span>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-spotify"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-soundcloud"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        </div>
-        
-        <div class="card-footer">
-            <span class="location-tag"><i class="fas fa-map-marker-alt"></i> Nashville</span>
-            <a href="#" class="contact-button">
-                <i class="fas fa-envelope"></i> Contact
-            </a>
-        </div>
-    </div>
-</div>
-
-</div>
-
-<div class="pagination">
-<a href="#"><i class="fas fa-chevron-left"></i></a>
-<a href="#" class="active">1</a>
-<a href="#">2</a>
-<a href="#">3</a>
-<a href="#">4</a>
-<a href="#">5</a>
-<a href="#"><i class="fas fa-chevron-right"></i></a>
-</div>
-</main>
-
-<footer>
-<div class="container">
-<div class="footer-content">
-    <div class="footer-section">
-        <h3>About Us</h3>
-        <p>Business Owner Directory connects entrepreneurs with potential customers and job seekers. Our mission is to support local businesses and foster economic growth in communities.</p>
-    </div>
-    
-    <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Browse Businesses</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Register a Business</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Jobs</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Contact Us</a></li>
-        </ul>
-    </div>
-    
-    <div class="footer-section">
-        <h3>Contact Info</h3>
-        <ul>
-            <li><i class="fas fa-map-marker-alt"></i> 123 Business Ave, Suite 100, New York, NY 10001</li>
-            <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-            <li><i class="fas fa-envelope"></i> info@businessdirectory.com</li>
-        </ul>
-    </div>
-    
-    <div class="footer-section">
-        <h3>Newsletter</h3>
-        <p>Subscribe to our newsletter for the latest business tips and opportunities.</p>
-        <div class="newsletter-form">
-            <input type="email" placeholder="Your Email Address">
-            <button type="submit">Subscribe</button>
-        </div>
-    </div>
-</div>
-
-<div class="footer-bottom">
-    <p>&copy; 2025 Business Owner Directory. All rights reserved.</p>
-</div>
-</div>
-</footer>
-<script src="../employers/employers.js"></script>
+    <script src="../employers/employers.js"></script>
 </body>
 </html>
