@@ -231,7 +231,6 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     background: linear-gradient(to right, #ffffff, #e0e7ff);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
